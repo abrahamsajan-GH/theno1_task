@@ -23,9 +23,7 @@ class Photo {
     );
   }
 
-  /// Album number used as a display label (e.g. "Album 1")
   String get albumLabel => 'Album $albumId';
 
-  /// Reliable image from picsum.photos using the photo id as seed
   String get reliableImageUrl => 'https://picsum.photos/seed/$id/300/300';
 }

@@ -22,7 +22,6 @@ class IsometricBarChart extends StatelessWidget {
             'Purchase Breakup by Year',
             style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold, color: Colors.black87),
           ),
-
           const SizedBox(height: 48),
           SizedBox(
             height: 300,

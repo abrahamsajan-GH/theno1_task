@@ -20,7 +20,6 @@ class ShopProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      // Limit to 40 to keep the grid manageable
       final response = await http.get(
         Uri.parse('${ApiClient.photos}?_limit=40'),
         headers: {

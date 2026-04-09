@@ -117,7 +117,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 80), // Space for bottom nav
+                const SizedBox(height: 80),
               ],
             );
           },

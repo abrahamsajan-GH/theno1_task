@@ -53,7 +53,6 @@ class CalendarProvider extends ChangeNotifier {
       return true;
     }
 
-    // Fallback to permission_handler if device_calendar requests fail depending on OS.
     var status = await Permission.calendarFullAccess.request();
     return status.isGranted;
   }
@@ -63,7 +62,6 @@ class CalendarProvider extends ChangeNotifier {
       final calendarsResult = await _deviceCalendarPlugin.retrieveCalendars();
       if (calendarsResult.isSuccess && calendarsResult.data != null) {
         _calendars = calendarsResult.data!;
-        // Select all by default if nothing selected yet
         if (_selectedCalendarIds.isEmpty) {
           _selectedCalendarIds = _calendars
               .where((c) => c.id != null)
@@ -107,7 +105,6 @@ class CalendarProvider extends ChangeNotifier {
         if (eventsResult.isSuccess && eventsResult.data != null) {
           for (var event in eventsResult.data!) {
             if (event.start != null && event.end != null) {
-              // TimeZone support adjustments if needed (device_calendar utilizes TZDateTime)
               DateTime startTime = event.start!;
               DateTime endTime = event.end!;
 

@@ -15,7 +15,6 @@ class AnalyticsScreen extends StatelessWidget {
         child: Column(
           children: const [
             IsometricBarChart(),
-            // Add more widgets here in the future if needed
           ],
         ),
       ),
